@@ -26,11 +26,11 @@ export function  PhoneBoock () {
             ]);
       };
     
-      const findContacts = [];
-      contacts.forEach(contact => {
-        contact.name.toLowerCase().includes(filter.toLowerCase()) &&
-        findContacts.push(contact);
-      });
+      
+      const findContacts = contacts.filter(contact =>
+        contact.name.toLowerCase().includes(filter.toLocaleLowerCase()),
+      );
+      
 
       const changeInput = e => {
         setFilter(e.target.value);
